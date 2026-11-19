@@ -1,59 +1,33 @@
-/* Light, quiet skin for the generated inner pages (projects, publications). Home uses site.css. */
-:root {
-  --bg: #fcfcfb; --text: #1a1a1a; --muted: #6b6b66; --line: #e7e6e2; --accent: #0b57d0;
-  --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-}
-html { scroll-behavior: smooth; }
-body, body.dark { background: var(--bg) !important; color: var(--text) !important; font-family: var(--font) !important; -webkit-font-smoothing: antialiased; }
-h1, h2, h3, h4, h5, h6, .navbar-brand { font-family: var(--font) !important; color: var(--text) !important; letter-spacing: -0.02em; }
-p, li, .article-style, .text-muted, .article-metadata, .article-metadata * { color: var(--muted) !important; }
-.article-style p, .article-style li { color: var(--text) !important; line-height: 1.7; }
-a { color: var(--accent); }
-a:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+/* Light polish on top of the Wowchemy template */
 
-/* nav */
-#navbar-main, .navbar-light, body.dark #navbar-main { background: var(--bg) !important; border-bottom: 1px solid var(--line) !important; box-shadow: none !important; }
-.navbar-brand { font-weight: 650 !important; font-size: 1.05rem !important; }
-.navbar-light .navbar-nav .nav-link, .nav-link { color: var(--muted) !important; font-size: .9rem; font-weight: 450; }
-.navbar-light .navbar-nav .nav-link:hover, .nav-link.active { color: var(--text) !important; }
-.navbar-toggler, .navbar-toggler i { color: var(--text) !important; }
-.nav-item.dropdown.theme-dropdown { display: none !important; }
-.navbar-collapse.show, .navbar-collapse.collapsing { background: var(--bg); }
+/* section headings: small, quiet sub-line */
+.section-heading .section-sub { margin-top: .75rem; font-size: .9rem; line-height: 1.5; color: #6b7280; }
+.section-heading .section-sub a { font-weight: 500; }
 
-/* page header */
-.article-header h1, .article-title { font-size: 1.9rem !important; font-weight: 650 !important; line-height: 1.25; }
-.article-container { max-width: 40rem; }
-.article-header, .pub-title { background: transparent !important; }
-.article-style img { border: 1px solid var(--line); border-radius: 8px; }
-.article-style h2, .article-style h3 { font-size: 1.15rem; margin-top: 2rem; }
+/* tighter vertical rhythm */
+.home-section { padding-top: 56px !important; padding-bottom: 56px !important; }
+#about h1 { font-size: 2.4rem; margin-bottom: 1.25rem; }
+#about p { font-size: 1.05rem; line-height: 1.75; }
 
-/* buttons / tags */
-.btn-outline-primary, .btn-primary, .btn-page-header { color: var(--accent) !important; background: transparent !important; border: 1px solid var(--line) !important; border-radius: 6px; font-size: .85rem; box-shadow: none !important; }
-.btn-outline-primary:hover, .btn-primary:hover { border-color: var(--accent) !important; background: transparent !important; }
+/* experience: quieter cards */
+.experience .card { border: 1px solid rgba(127,127,127,.18); box-shadow: none; }
+.exp-company { font-size: .95rem !important; }
 
-/* project index cards: plain, quiet */
-.card, .card-simple, .card-body { background: transparent !important; border: 1px solid var(--line) !important; border-radius: 10px !important; box-shadow: none !important; }
-.card .card-body { border: 0 !important; }
-.card-text h4 a, .card-title a { color: var(--text) !important; font-weight: 600; text-transform: none !important; }
-.card-text h4 { text-transform: none !important; font-size: 1.05rem; }
-.card-image img { border-radius: 10px 10px 0 0; }
-.hover-overlay::after { display: none !important; }
+/* projects: clean two-column grid instead of narrow masonry */
 .projects-container { display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; height: auto !important; position: static !important; }
 .projects-container .project-item { position: static !important; width: auto !important; transform: none !important; left: auto !important; top: auto !important; margin: 0 !important; padding: 0 !important; float: none !important; }
-.projects-container .card { height: 100%; overflow: hidden; }
+.projects-container .card { height: 100%; overflow: hidden; box-shadow: none; border: 1px solid rgba(127,127,127,.2); }
 .project-card .card-image { display: block; aspect-ratio: 16 / 9; overflow: hidden; background: #fff; }
-.project-card .card-image img { width: 100%; height: 100%; object-fit: cover; border-radius: 0; }
-.card-text { padding: 1rem 1.15rem 1.2rem; }
-.card-text .article-style p { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; margin: 0; font-size: .9rem; color: var(--muted) !important; }
+.project-card .card-image img { width: 100%; height: 100%; object-fit: cover; }
+.card-text h4 { text-transform: none !important; font-size: 1.05rem; }
+.card-text .article-style p { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; margin: 0; }
 @media (max-width: 767px) { .projects-container { grid-template-columns: 1fr; } }
 
-/* lists, share, author box, footer */
-.article-metadata a { color: var(--text) !important; }
-.share-box { display: none; }
-.article-widget, .author-card { background: transparent !important; border-color: var(--line) !important; }
-.author-card-content, .author-card h5 a { color: var(--text) !important; }
-.site-footer { background: transparent !important; border-top: 1px solid var(--line); color: var(--muted) !important; }
-.back-to-top, .back-to-top i { color: var(--muted) !important; }
-hr { border-color: var(--line); }
-code, pre, .pub-detail-block { background: #f3f2ee !important; border: 1px solid var(--line); border-radius: 6px; color: var(--text) !important; }
-.dropdown-menu, .search-header, .search-results, aside.search-modal, #search-query { background: var(--bg) !important; color: var(--text) !important; }
+/* publications: compact list */
+.stream-item { padding-bottom: .9rem; margin-bottom: .9rem; border-bottom: 1px solid rgba(127,127,127,.18); }
+.stream-item .article-title { font-size: 1.05rem; line-height: 1.4; }
+.stream-item .article-style { font-size: .85rem; opacity: .8; }
+.stream-item .article-metadata { font-size: .85rem; }
+.experience .card-body { padding: .9rem 1.1rem; }
+.experience .card { margin-bottom: 0; }
+.experience .py-2 { padding-top: .3rem !important; padding-bottom: .3rem !important; }
